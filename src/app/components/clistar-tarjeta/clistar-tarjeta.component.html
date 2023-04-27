@@ -3,22 +3,13 @@
         <h5 class="titulo">Listar Tarjeta</h5>
         <table class="table">
             <tbody>
-                <tr>
-                    <td>Tomas</td>
-                    <td>434234324342432432</td>
-                    <td>23-23</td>
+                <tr *ngFor="let tarjeta of listTarjetas">
+                    <td>{{ tarjeta.titular }}</td>
+                    <td>{{ tarjeta.numeroTarjeta }}</td>
+                    <td>{{ tarjeta.fechaExpiracion }}</td>
                     <td>
-                        <i class="far fa-edit text-info"></i>
-                        <i class="far fa-trash-alt text-danger"></i>
-                    </td>
-                 </tr>
-                <tr>
-                    <td>Pepe</td>
-                    <td>434234324342432432</td>
-                    <td>23-24</td>
-                    <td>
-                        <i class="far fa-edit text-info"></i>
-                        <i class="far fa-trash-alt text-danger"></i>
+                        <i (click)="editarTarjeta(tarjeta)" class="far fa-edit text-info"></i>
+                        <i (click)="eliminarTarjeta(tarjeta.id)" class="far fa-trash-alt text-danger"></i>
                     </td>
                  </tr>
             </tbody>
